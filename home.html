@@ -1,0 +1,69 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <center>
+      <b><p>Simple Calculator</p></b>
+      <p>
+        Input 1:
+        <input id="input1" type="number" onkeydown="Calculator(this)" />
+      </p>
+      <p>Input 2: <input id="input2" type="number" /></p>
+      <div>
+        <center>
+          <button id="add" onclick="Calculator(this.id)">+</button>
+          <button id="sub" onclick="Calculator(this.id)">-</button>
+          <button id="mul" onclick="Calculator(this.id)">x</button>
+          <button id="divide" onclick="Calculator(this.id)">/</button>
+        </center>
+      </div>
+      <span style="color: green">Result:</span>
+      <span id="result"></span>
+    </center>
+    <script>
+      const input1 = document.getElementById("input1");
+      const input2 = document.getElementById("input2");
+
+      function Calculator(id) {
+        if (id === "add") {
+          console.log("ADD");
+          answer = parseInt(input1.value) + parseInt(input2.value);
+          result = document.getElementById("result");
+          result.innerText = answer;
+        } else if (id === "sub") {
+          console.log("SUB");
+          answer = parseInt(input1.value) - parseInt(input2.value);
+          result = document.getElementById("result");
+          result.innerText = answer;
+        } else if (id === "mul") {
+          console.log("MULTIPLY");
+          answer = parseInt(input1.value) * parseInt(input2.value);
+          result = document.getElementById("result");
+          result.innerText = answer;
+        } else if (id === "divide") {
+          console.log("DIVIDE");
+          answer = parseInt(input1.value) / parseInt(input2.value);
+          result = document.getElementById("result");
+          result.innerText = answer;
+        }
+      }
+      //     if(event.key === 'Enter'){
+      //         alert(input1 + typeof(input2))
+      //     }
+      //     //console.log("Clicked:", id);
+
+      //     if ((id = "add")) {
+      //         var ans = input1 + input2;
+      //         console.log(ans);
+
+      //     }
+      document.getElementById("result").style.color = "green";
+      document.getElementById("result").innerHTML = "";
+      //   }
+    </script>
+  </body>
+</html>
