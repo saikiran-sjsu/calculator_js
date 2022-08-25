@@ -27,43 +27,35 @@
     <script>
       const input1 = document.getElementById("input1");
       const input2 = document.getElementById("input2");
-
+      console.log(input1 + input2);
       function Calculator(id) {
-        if (id === "add") {
-          console.log("ADD");
-          answer = parseInt(input1.value) + parseInt(input2.value);
-          result = document.getElementById("result");
-          result.innerText = answer;
-        } else if (id === "sub") {
-          console.log("SUB");
-          answer = parseInt(input1.value) - parseInt(input2.value);
-          result = document.getElementById("result");
-          result.innerText = answer;
-        } else if (id === "mul") {
-          console.log("MULTIPLY");
-          answer = parseInt(input1.value) * parseInt(input2.value);
-          result = document.getElementById("result");
-          result.innerText = answer;
-        } else if (id === "divide") {
-          console.log("DIVIDE");
-          answer = parseInt(input1.value) / parseInt(input2.value);
-          result = document.getElementById("result");
-          result.innerText = answer;
+        if (input1.value != "" && input2.value != "") {
+          if (id === "add") {
+            console.log("ADD");
+            answer = parseFloat(input1.value) + parseFloat(input2.value);
+            result = document.getElementById("result");
+            result.innerText = answer.toFixed(2);
+          } else if (id === "sub") {
+            console.log("SUB");
+            answer = parseFloat(input1.value) - parseFloat(input2.value);
+            result = document.getElementById("result");
+            result.innerText = answer.toFixed(2);
+          } else if (id === "mul") {
+            console.log("MULTIPLY");
+            answer = parseFloat(input1.value) * parseFloat(input2.value);
+            result = document.getElementById("result");
+            result.innerText = answer.toFixed(2);
+          } else if (id === "divide") {
+            console.log("DIVIDE");
+            answer = parseFloat(input1.value) / parseFloat(input2.value);
+            result = document.getElementById("result");
+            result.innerText = answer.toFixed(2);
+          }
+        } else {
+          document.getElementById("result").innerHTML = "Please enter value";
         }
       }
-      //     if(event.key === 'Enter'){
-      //         alert(input1 + typeof(input2))
-      //     }
-      //     //console.log("Clicked:", id);
-
-      //     if ((id = "add")) {
-      //         var ans = input1 + input2;
-      //         console.log(ans);
-
-      //     }
-      document.getElementById("result").style.color = "green";
       document.getElementById("result").innerHTML = "";
-      //   }
     </script>
   </body>
 </html>
